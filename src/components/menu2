@@ -13,7 +13,7 @@ class Menu extends Component {
             selectedDish: null
         }
         this.onDishSelect = this.onDishSelect.bind(this)
-     
+        this.renderComments = this.renderComments.bind(this)
  
 
     }
@@ -22,7 +22,39 @@ class Menu extends Component {
         this.setState({ selectedDish: dish});
     }
 
-     
+     renderComments(comments_array) {
+      const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      
+            if(comments_array != null)
+            {
+              const comm1 = comments_array.comments.map((comm_) => {
+                const dd = new Date(comm_.date);
+                  return (
+                      <ul className = "list-unstyled" key={comm_.id}>
+                        <li>{comm_.comment}</li>               
+                        <li>--{comm_.author}, { months [(dd).getMonth()-1]}  {(dd).getDate()},  {(dd).getFullYear()}</li>           
+        
+                      </ul>
+                          );
+            });
+    
+            return (
+             
+              <div  key={comments_array.id}>
+                    <h4> Comments </h4> 
+                {comm1}
+                </div>          
+            )
+            }
+            else{
+              return (
+             
+                <div> </div>          
+              )
+            }
+        
+        
+    }
 
    
 
@@ -51,11 +83,14 @@ class Menu extends Component {
                     {menu}
                 </div>
                 <div className="row">
-                  
+                  <div  className="col-12 col-md-5 m-1">
                     <DishDetail dish={this.state.selectedDish} />
-                  
+                  </div>
                 
-                  
+                  <div  className="col-12 col-md-5 m-1">
+              
+                  {this.renderComments(this.state.selectedDish)}
+                  </div>
                 
                    
                 </div>
