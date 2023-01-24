@@ -1,4 +1,4 @@
-rt React, { Component } from 'react';
+import React, { Component } from 'react';
 import { Media } from 'reactstrap';
 import DishDetail from './DishdetailComponent';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody,
