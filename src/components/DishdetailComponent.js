@@ -66,21 +66,27 @@ function RenderComments({comments_array})  {
 
 const  DishDetail = (props) => {
   
-console.log(props.dish)
+// console.log(props.dish)
+if (props.dish != null)
+{
   return(
+  <div className="container">
     <div className="row">
       <div className="col-12 col-md-5 m-1">
         <RenderDish  dish={props.dish}/>
       </div>
 
       <div className="col-12 col-md-5 m-1">
-        
+     
         <RenderComments comments_array={props.dish.comments}/>
+      
       </div>
     
 ````</div>
+  </div>
   
   )
+}
 }
 
 
