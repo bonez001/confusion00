@@ -28,7 +28,7 @@ function RenderDish({dish}) {
 
 
 function RenderComments({comments_array})  {
-  console.log({comments_array})
+  // console.log({comments_array})
 
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   
@@ -89,7 +89,7 @@ if (props.dish != null)
             <RenderDish dish={props.dish} />
         </div>
         <div className="col-12 col-md-5 m-1">
-          {console.log(props.comments)}
+          {/* {console.log(props.comments)} */}
             <RenderComments comments_array={props.comments} />
         </div>
     </div>
