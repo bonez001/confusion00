@@ -11,7 +11,7 @@ import { PROMOTIONS } from '../shared/promotions';
 import { LEADERS } from '../shared/leaders';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Contact from './ContactComponent';
-import About from './AboutComponent0';
+import About from './AboutComponent4';
 
 class Main extends Component {
 
